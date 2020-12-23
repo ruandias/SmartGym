@@ -3,9 +3,48 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8E0368BC-3E51-4AE1-844E-C31F60B7A1EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{2BFB9C12-E039-42B1-8411-5BA204D2CA28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.API", "SmartGym.API\SmartGym.API.csproj", "{3F6E8376-1278-4AED-8FA4-A6F7F773076A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{501C43C9-0DD7-42B5-9554-EF2A383F6545}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Domain", "SmartGym.Domain\SmartGym.Domain.csproj", "{DCAE9CED-BE0E-499C-B46D-A8051C491B2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{375C4163-1DC8-4C88-9DAA-6D1E89D01F06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Tests", "SmartGym.Tests\SmartGym.Tests.csproj", "{59BA705B-7F18-4D64-8295-F8E713C28D7B}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F6E8376-1278-4AED-8FA4-A6F7F773076A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F6E8376-1278-4AED-8FA4-A6F7F773076A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F6E8376-1278-4AED-8FA4-A6F7F773076A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F6E8376-1278-4AED-8FA4-A6F7F773076A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCAE9CED-BE0E-499C-B46D-A8051C491B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCAE9CED-BE0E-499C-B46D-A8051C491B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCAE9CED-BE0E-499C-B46D-A8051C491B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCAE9CED-BE0E-499C-B46D-A8051C491B2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59BA705B-7F18-4D64-8295-F8E713C28D7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59BA705B-7F18-4D64-8295-F8E713C28D7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59BA705B-7F18-4D64-8295-F8E713C28D7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59BA705B-7F18-4D64-8295-F8E713C28D7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2BFB9C12-E039-42B1-8411-5BA204D2CA28} = {8E0368BC-3E51-4AE1-844E-C31F60B7A1EA}
+		{3F6E8376-1278-4AED-8FA4-A6F7F773076A} = {2BFB9C12-E039-42B1-8411-5BA204D2CA28}
+		{501C43C9-0DD7-42B5-9554-EF2A383F6545} = {8E0368BC-3E51-4AE1-844E-C31F60B7A1EA}
+		{DCAE9CED-BE0E-499C-B46D-A8051C491B2D} = {501C43C9-0DD7-42B5-9554-EF2A383F6545}
+		{59BA705B-7F18-4D64-8295-F8E713C28D7B} = {375C4163-1DC8-4C88-9DAA-6D1E89D01F06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52536DB9-A2AB-4F1D-B909-ABE96402AD75}
