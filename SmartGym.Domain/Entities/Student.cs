@@ -1,4 +1,5 @@
 ﻿using SmartGym.Domain.Enums;
+using SmartGym.Domain.ValueObjects;
 
 namespace SmartGym.Domain.Entities
 {
@@ -6,14 +7,14 @@ namespace SmartGym.Domain.Entities
     {
         protected Student() { }
 
-        public Student(string name, Address address)
+        public Student(Name name, Address address)
         {
             Name = name;
             Address = address;
             Status = EStatusStudent.Active;
         }
 
-        public string Name { get; private set; }
+        public Name Name { get; private set; }
         public Address Address { get; private set; }
         public EStatusStudent Status { get; private set; }
 

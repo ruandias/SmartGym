@@ -23,10 +23,5 @@ namespace SmartGym.Domain.Entities
         public IReadOnlyCollection<Student> Students { get; private set; }
         public IReadOnlyCollection<PersonalTrainer> PersonalTrainers { get; private set; }
 
-        public void AddStudent(Student student)
-        {
-            _students.Add(student);
-        }
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using SmartGym.Domain.Enums;
+using SmartGym.Domain.ValueObjects;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -10,7 +11,7 @@ namespace SmartGym.Domain.Entities
 
         private IList<Student> _students;
 
-        public PersonalTrainer(string name, Address address, int idTrainingCenter)
+        public PersonalTrainer(Name name, Address address, int idTrainingCenter)
         {
             Name = name;
             Address = address;
@@ -19,7 +20,7 @@ namespace SmartGym.Domain.Entities
             IdTrainingCenter = idTrainingCenter;
         }
 
-        public string Name { get; private set; }
+        public Name Name { get; private set; }
         public Address Address { get; private set; }
         public EStatusPersonalTrainer Status { get; private set; }
         public IReadOnlyCollection<Student> Students { get { return _students.ToArray();  } }
