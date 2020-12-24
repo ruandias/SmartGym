@@ -1,12 +1,10 @@
 ﻿using SmartGym.Domain.Enums;
-using SmartGym.Domain.Shared.Entities;
-using SmartGym.Domain.ValueObjects;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace SmartGym.Domain.Entities
 {
-    public class PersonalTrainer : Entity
+    public class PersonalTrainer : BaseEntity<int>
     {
         protected PersonalTrainer() { }
 
@@ -21,7 +19,6 @@ namespace SmartGym.Domain.Entities
             IdTrainingCenter = idTrainingCenter;
         }
 
-        public int Id { get; private set; }
         public string Name { get; private set; }
         public Address Address { get; private set; }
         public EStatusPersonalTrainer Status { get; private set; }

@@ -1,10 +1,11 @@
-﻿using SmartGym.Domain.Shared.Entities;
-
+﻿
 namespace SmartGym.Domain.Entities
 {
-    public class Address : Entity
+    public class Address : BaseEntity<int>
     {
-        public int Id { get; private set; }
+        protected Address() { }
+
+
         public string  Street { get; private set; }
         public string Number { get; private set; }
         public string Neighborhood { get; private set; }

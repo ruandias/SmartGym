@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SmartGym.API.Persistence;
+using SmartGym.Infra.Data.Context;
 
-namespace SmartGym.API.Persistence.Migrations
+namespace SmartGym.Infra.Data.Migrations
 {
     [DbContext(typeof(SqlServerDbContext))]
-    [Migration("20201224151530_PrimeiraMigration")]
-    partial class PrimeiraMigration
+    [Migration("20201224214305_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,30 +23,45 @@ namespace SmartGym.API.Persistence.Migrations
 
             modelBuilder.Entity("SmartGym.Domain.Entities.Address", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
 
                     b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("City");
 
                     b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("Country");
 
                     b.Property<string>("Neighborhood")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("Neighborhood");
 
                     b.Property<string>("Number")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("varchar(2)")
+                        .HasColumnName("Number");
 
                     b.Property<string>("State")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("State");
 
                     b.Property<string>("Street")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("varchar(100)")
+                        .HasColumnName("Street");
 
                     b.Property<string>("ZipCode")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("varchar(30)")
+                        .HasColumnName("ZipCode");
 
                     b.HasKey("Id");
 
@@ -60,8 +75,8 @@ namespace SmartGym.API.Persistence.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<Guid?>("AddressId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("AddressId")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdTrainingCenter")
                         .HasColumnType("int");
@@ -78,7 +93,7 @@ namespace SmartGym.API.Persistence.Migrations
 
                     b.HasIndex("IdTrainingCenter");
 
-                    b.ToTable("PersonalTrainers");
+                    b.ToTable("PersonalTrainer");
                 });
 
             modelBuilder.Entity("SmartGym.Domain.Entities.Student", b =>
@@ -88,8 +103,8 @@ namespace SmartGym.API.Persistence.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<Guid?>("AddressId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("AddressId")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdPersonalTrainer")
                         .HasColumnType("int");
@@ -111,7 +126,7 @@ namespace SmartGym.API.Persistence.Migrations
 
                     b.HasIndex("IdTrainingCenter");
 
-                    b.ToTable("Students");
+                    b.ToTable("Student");
                 });
 
             modelBuilder.Entity("SmartGym.Domain.Entities.TrainingCenter", b =>
@@ -121,8 +136,8 @@ namespace SmartGym.API.Persistence.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<Guid?>("AddressId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("AddressId")
+                        .HasColumnType("int");
 
                     b.Property<string>("CompanyName")
                         .HasColumnType("nvarchar(max)");
@@ -131,7 +146,7 @@ namespace SmartGym.API.Persistence.Migrations
 
                     b.HasIndex("AddressId");
 
-                    b.ToTable("TrainingCenters");
+                    b.ToTable("TrainingCenter");
                 });
 
             modelBuilder.Entity("SmartGym.Domain.Entities.PersonalTrainer", b =>

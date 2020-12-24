@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SmartGym.API.Persistence.Migrations
+namespace SmartGym.Infra.Data.Migrations
 {
-    public partial class PrimeiraMigration : Migration
+    public partial class FirstMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,14 +10,15 @@ namespace SmartGym.API.Persistence.Migrations
                 name: "Address",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Street = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Number = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Neighborhood = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    State = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Country = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ZipCode = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Street = table.Column<string>(type: "varchar(100)", nullable: false),
+                    Number = table.Column<string>(type: "varchar(2)", nullable: false),
+                    Neighborhood = table.Column<string>(type: "varchar(30)", nullable: false),
+                    City = table.Column<string>(type: "varchar(30)", nullable: false),
+                    State = table.Column<string>(type: "varchar(30)", nullable: false),
+                    Country = table.Column<string>(type: "varchar(30)", nullable: false),
+                    ZipCode = table.Column<string>(type: "varchar(30)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -26,19 +26,19 @@ namespace SmartGym.API.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TrainingCenters",
+                name: "TrainingCenter",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    AddressId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TrainingCenters", x => x.Id);
+                    table.PrimaryKey("PK_TrainingCenter", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TrainingCenters_Address_AddressId",
+                        name: "FK_TrainingCenter_Address_AddressId",
                         column: x => x.AddressId,
                         principalTable: "Address",
                         principalColumn: "Id",
@@ -46,109 +46,109 @@ namespace SmartGym.API.Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PersonalTrainers",
+                name: "PersonalTrainer",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    AddressId = table.Column<int>(type: "int", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
                     IdTrainingCenter = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PersonalTrainers", x => x.Id);
+                    table.PrimaryKey("PK_PersonalTrainer", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_PersonalTrainers_Address_AddressId",
+                        name: "FK_PersonalTrainer_Address_AddressId",
                         column: x => x.AddressId,
                         principalTable: "Address",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_PersonalTrainers_TrainingCenters_IdTrainingCenter",
+                        name: "FK_PersonalTrainer_TrainingCenter_IdTrainingCenter",
                         column: x => x.IdTrainingCenter,
-                        principalTable: "TrainingCenters",
+                        principalTable: "TrainingCenter",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Students",
+                name: "Student",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AddressId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    AddressId = table.Column<int>(type: "int", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
                     IdTrainingCenter = table.Column<int>(type: "int", nullable: false),
                     IdPersonalTrainer = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.Id);
+                    table.PrimaryKey("PK_Student", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Students_Address_AddressId",
+                        name: "FK_Student_Address_AddressId",
                         column: x => x.AddressId,
                         principalTable: "Address",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Students_PersonalTrainers_IdPersonalTrainer",
+                        name: "FK_Student_PersonalTrainer_IdPersonalTrainer",
                         column: x => x.IdPersonalTrainer,
-                        principalTable: "PersonalTrainers",
+                        principalTable: "PersonalTrainer",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Students_TrainingCenters_IdTrainingCenter",
+                        name: "FK_Student_TrainingCenter_IdTrainingCenter",
                         column: x => x.IdTrainingCenter,
-                        principalTable: "TrainingCenters",
+                        principalTable: "TrainingCenter",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_PersonalTrainers_AddressId",
-                table: "PersonalTrainers",
+                name: "IX_PersonalTrainer_AddressId",
+                table: "PersonalTrainer",
                 column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PersonalTrainers_IdTrainingCenter",
-                table: "PersonalTrainers",
+                name: "IX_PersonalTrainer_IdTrainingCenter",
+                table: "PersonalTrainer",
                 column: "IdTrainingCenter");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Students_AddressId",
-                table: "Students",
+                name: "IX_Student_AddressId",
+                table: "Student",
                 column: "AddressId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Students_IdPersonalTrainer",
-                table: "Students",
+                name: "IX_Student_IdPersonalTrainer",
+                table: "Student",
                 column: "IdPersonalTrainer");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Students_IdTrainingCenter",
-                table: "Students",
+                name: "IX_Student_IdTrainingCenter",
+                table: "Student",
                 column: "IdTrainingCenter");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TrainingCenters_AddressId",
-                table: "TrainingCenters",
+                name: "IX_TrainingCenter_AddressId",
+                table: "TrainingCenter",
                 column: "AddressId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Students");
+                name: "Student");
 
             migrationBuilder.DropTable(
-                name: "PersonalTrainers");
+                name: "PersonalTrainer");
 
             migrationBuilder.DropTable(
-                name: "TrainingCenters");
+                name: "TrainingCenter");
 
             migrationBuilder.DropTable(
                 name: "Address");

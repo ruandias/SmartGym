@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SmartGym.API.Persistence;
 using SmartGym.Domain.Entities;
-using System.Linq;
 
 namespace SmartGym.API.Controllers
 {
@@ -9,36 +7,21 @@ namespace SmartGym.API.Controllers
     [ApiController]
     public class TrainingCenterController : ControllerBase
     {
-        private readonly SqlServerDbContext _sqlServerDbContext;
-        public TrainingCenterController(SqlServerDbContext sqlServerDbContext)
-        {
-            _sqlServerDbContext = sqlServerDbContext;
-        }
-
         [HttpGet]
         public IActionResult Get()
         {
-            var trainingCenters = _sqlServerDbContext.TrainingCenters.ToList();
-            return Ok(trainingCenters);
+            return Ok();
         }
 
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var trainingCenter = _sqlServerDbContext.TrainingCenters.SingleOrDefault(t => t.Id == id);
-
-            if (trainingCenter == null)
-                return NotFound();
-
-            return Ok(trainingCenter);
+            return Ok();
         }
 
         [HttpPost]
         public IActionResult Post([FromBody]TrainingCenter trainingCenter)
         {
-            _sqlServerDbContext.TrainingCenters.Add(trainingCenter);
-
-            _sqlServerDbContext.SaveChanges();
 
             return NoContent();
         }

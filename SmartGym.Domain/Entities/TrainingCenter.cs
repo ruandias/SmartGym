@@ -1,9 +1,8 @@
-﻿using SmartGym.Domain.Shared.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SmartGym.Domain.Entities
 {
-    public class TrainingCenter : Entity
+    public class TrainingCenter : BaseEntity<int>
     {
         protected TrainingCenter() { }
 
@@ -19,7 +18,6 @@ namespace SmartGym.Domain.Entities
             _personalTrainers = new List<PersonalTrainer>();
         }
 
-        public int Id { get; private set; }
         public string CompanyName { get; private set; }
         public Address  Address { get; private set; }
         public IReadOnlyCollection<Student> Students { get; private set; }

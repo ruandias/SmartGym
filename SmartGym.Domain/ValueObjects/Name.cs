@@ -1,8 +1,7 @@
-﻿using SmartGym.Domain.Shared.ValueObjects;
-
+﻿
 namespace SmartGym.Domain.ValueObjects
 {
-    public class Name : ValueObject
+    public class Name
     {
         public Name(string firstName, string lastName)
         {
