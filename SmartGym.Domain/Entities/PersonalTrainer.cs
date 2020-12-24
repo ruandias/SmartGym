@@ -12,12 +12,13 @@ namespace SmartGym.Domain.Entities
 
         private IList<Student> _students;
 
-        public PersonalTrainer(string name, Address address)
+        public PersonalTrainer(string name, Address address, int idTrainingCenter)
         {
             Name = name;
             Address = address;
             Status = EStatusPersonalTrainer.Active;
             _students = new List<Student>();
+            IdTrainingCenter = idTrainingCenter;
         }
 
         public int Id { get; private set; }

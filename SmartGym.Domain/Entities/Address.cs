@@ -4,6 +4,7 @@ namespace SmartGym.Domain.Entities
 {
     public class Address : Entity
     {
+        public int Id { get; private set; }
         public string  Street { get; private set; }
         public string Number { get; private set; }
         public string Neighborhood { get; private set; }
