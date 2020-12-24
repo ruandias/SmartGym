@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C8A787
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Domain.Shared", "SmartGym.Domain.Shared\SmartGym.Domain.Shared.csproj", "{59DB899E-A1FC-4AC9-A023-EF6B56F53E2E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Infra.CrossCutting", "SmartGym.Infra.CrossCutting\SmartGym.Infra.CrossCutting.csproj", "{BD7FD1BF-0878-4FDF-8A85-B7A4EEA52FDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{59DB899E-A1FC-4AC9-A023-EF6B56F53E2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59DB899E-A1FC-4AC9-A023-EF6B56F53E2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59DB899E-A1FC-4AC9-A023-EF6B56F53E2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD7FD1BF-0878-4FDF-8A85-B7A4EEA52FDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD7FD1BF-0878-4FDF-8A85-B7A4EEA52FDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD7FD1BF-0878-4FDF-8A85-B7A4EEA52FDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD7FD1BF-0878-4FDF-8A85-B7A4EEA52FDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,6 +76,7 @@ Global
 		{A65C888C-E8FF-4C0F-92D9-1716A4177CBD} = {8E0368BC-3E51-4AE1-844E-C31F60B7A1EA}
 		{C8A787D2-9495-48BE-B13F-A6FBD3459A58} = {A65C888C-E8FF-4C0F-92D9-1716A4177CBD}
 		{59DB899E-A1FC-4AC9-A023-EF6B56F53E2E} = {C8A787D2-9495-48BE-B13F-A6FBD3459A58}
+		{BD7FD1BF-0878-4FDF-8A85-B7A4EEA52FDD} = {B5020F4C-8ECB-467C-A8AB-FC6A9CA870FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {52536DB9-A2AB-4F1D-B909-ABE96402AD75}
