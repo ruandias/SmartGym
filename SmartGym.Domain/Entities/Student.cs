@@ -20,5 +20,12 @@ namespace SmartGym.Domain.Entities
         public string Name { get; private set; }
         public Address Address { get; private set; }
         public EStatusStudent Status { get; private set; }
+
+        public int IdTrainingCenter { get; private set; }
+        public TrainingCenter TrainingCenter { get; private set; }
+
+        public int IdPersonalTrainer { get; private set; }
+        public PersonalTrainer PersonalTrainer { get; private set; }
+
     }
 }

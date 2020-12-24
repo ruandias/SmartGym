@@ -26,6 +26,9 @@ namespace SmartGym.Domain.Entities
         public EStatusPersonalTrainer Status { get; private set; }
         public IReadOnlyCollection<Student> Students { get { return _students.ToArray();  } }
 
+        public int IdTrainingCenter { get; private set; }
+        public TrainingCenter TrainingCenter { get; private set; }
+
         public void AddStudent(Student student)
         {
             _students.Add(student);
