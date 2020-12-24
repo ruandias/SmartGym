@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SmartGym.API.Persistence;
 using SmartGym.Infra.CrossCutting.InversionOfControl;
 
 namespace SmartGym.API
@@ -21,6 +23,13 @@ namespace SmartGym.API
 
             services.AddControllers();
             services.AddSwaggerDependency();
+
+            //services.AddDbContext<SqlServerDbContext>(options => 
+            //    options.UseInMemoryDatabase("SmartGymDb"));
+
+            
+            services.AddDbContext<SqlServerDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("SmartGymCn")));
 
         }
 
