@@ -12,7 +12,7 @@ namespace SmartGym.Domain.Entities
 
         private IList<Student> _students;
 
-        public PersonalTrainer(Name name, Address address)
+        public PersonalTrainer(string name, Address address)
         {
             Name = name;
             Address = address;
@@ -21,7 +21,7 @@ namespace SmartGym.Domain.Entities
         }
 
         public int Id { get; private set; }
-        public Name Name { get; private set; }
+        public string Name { get; private set; }
         public Address Address { get; private set; }
         public EStatusPersonalTrainer Status { get; private set; }
         public IReadOnlyCollection<Student> Students { get { return _students.ToArray();  } }

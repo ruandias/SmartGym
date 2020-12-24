@@ -19,7 +19,7 @@ namespace SmartGym.Domain.Entities
             _personalTrainers = new List<PersonalTrainer>();
         }
 
-        public long Id { get; private set; }
+        public int Id { get; private set; }
         public string CompanyName { get; private set; }
         public Address  Address { get; private set; }
         public IReadOnlyCollection<Student> Students { get; private set; }
