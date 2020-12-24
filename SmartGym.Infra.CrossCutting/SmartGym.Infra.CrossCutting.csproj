@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SmartGym.Infra.Data\SmartGym.Infra.Data.csproj" />
+    <ProjectReference Include="..\SmartGym.Infra.Shared\SmartGym.Infra.Shared.csproj" />
   </ItemGroup>
 
 </Project>
