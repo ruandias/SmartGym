@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SmartGym.Domain.Entities;
+using SmartGym.Domain.Interfaces;
+using SmartGym.Domain.Models;
+using System;
 
 namespace SmartGym.API.Controllers
 {
@@ -7,35 +10,83 @@ namespace SmartGym.API.Controllers
     [ApiController]
     public class TrainingCenterController : ControllerBase
     {
-        [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok();
-        }
+        private readonly IServiceTrainingCenter _serviceTrainingCenter;
 
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-            return Ok();
-        }
+        public TrainingCenterController(IServiceTrainingCenter serviceTrainingCenter) =>
+            _serviceTrainingCenter = serviceTrainingCenter;
+
 
         [HttpPost]
-        public IActionResult Post([FromBody]TrainingCenter trainingCenter)
+        public IActionResult Register([FromBody] CreateTrainingCenterModel trainingCenterModel)
         {
+            try
+            {
+                var trainingCenter = _serviceTrainingCenter.Insert(trainingCenterModel);
 
-            return NoContent();
+                return Created($"/api/trainingCenters/{trainingCenter?.Id}", trainingCenter?.Id);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id)
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateTrainingCenterModel trainingCenterModel)
         {
-            return Ok();
+            try
+            {
+                var user = _serviceTrainingCenter.Update(id, trainingCenterModel);
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Remove([FromRoute] int id)
         {
-            return Ok();
+            try
+            {
+                _serviceTrainingCenter.Delete(id);
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet]
+        public IActionResult RecoverAll()
+        {
+            try
+            {
+                var users = _serviceTrainingCenter.RecoverAll();
+                return Ok(users);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult Recover([FromRoute] int id)
+        {
+            try
+            {
+                var user = _serviceTrainingCenter.RecoverById(id);
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
     }
 }

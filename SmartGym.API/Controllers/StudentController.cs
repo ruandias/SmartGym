@@ -5,7 +5,7 @@ using System;
 
 namespace SmartGym.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/students")]
     [ApiController]
     public class StudentController : Controller
     {
