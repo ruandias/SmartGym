@@ -4,17 +4,25 @@ namespace SmartGym.Domain.Entities
 {
     public class TrainingCenter : BaseEntity<int>
     {
-        protected TrainingCenter() { }
 
         private IList<Student> _students;
 
         private IList<PersonalTrainer> _personalTrainers;
+        protected TrainingCenter() { }
 
-        public TrainingCenter(string companyName)
+
+        public TrainingCenter(int id, string companyName) : base(id)
         {
-            CompanyName = companyName;
-            _students = new List<Student>();
-            _personalTrainers = new List<PersonalTrainer>();
+            AddNotification(companyName, "CompanyName");
+
+            if(Valid)
+            {
+                CompanyName = companyName;
+                _students = new List<Student>();
+                _personalTrainers = new List<PersonalTrainer>();
+            }
+
+
         }
 
         public string CompanyName { get; private set; }

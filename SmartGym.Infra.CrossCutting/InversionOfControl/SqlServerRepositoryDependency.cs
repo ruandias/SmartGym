@@ -9,6 +9,8 @@ namespace SmartGym.Infra.CrossCutting.InversionOfControl
         public static void AddSqlServerRepositoryDependency(this IServiceCollection services)
         {
             services.AddScoped<IRepositoryStudent, StudentRepository>();
+            services.AddScoped<IRepositoryPersonalTrainer, PersonalTrainerRepository>();
+            services.AddScoped<IRepositoryTrainingCenter, TrainingCenterRepository>();
         }
     }
 }

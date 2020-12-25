@@ -1,5 +1,4 @@
-﻿using Flunt.Validations;
-using SmartGym.Domain.Enums;
+﻿using SmartGym.Domain.Enums;
 using SmartGym.Domain.ValueTypes;
 
 namespace SmartGym.Domain.Entities

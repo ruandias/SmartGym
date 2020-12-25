@@ -1,6 +1,6 @@
 ﻿namespace SmartGym.Domain.Models
 {
-    class PersonalTrainerModel
+    public class PersonalTrainerModel
     {
         public PersonalTrainerModel(int id, string name)
         {

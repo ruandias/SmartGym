@@ -11,12 +11,16 @@ namespace SmartGym.Domain.Entities
 
         private IList<Student> _students;
 
-        public PersonalTrainer(Name name, int idTrainingCenter)
+        public PersonalTrainer(int id, Name name) : base(id)
         {
-            Name = name;
-            Status = EStatusPersonalTrainer.Active;
-            _students = new List<Student>();
-            IdTrainingCenter = idTrainingCenter;
+            AddNotifications(name.contract);
+            if(Valid)
+            {
+                Name = name;
+                Status = EStatusPersonalTrainer.Active;
+                _students = new List<Student>();
+            }
+
         }
 
         public Name Name { get; private set; }
