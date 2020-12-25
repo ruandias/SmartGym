@@ -12,6 +12,7 @@ namespace SmartGym.Infra.Data.Mapping
 
             builder.HasKey(prop => prop.Id);
 
+
             builder
                 .HasMany(prop => prop.Students)
                 .WithOne(prop => prop.TrainingCenter)
