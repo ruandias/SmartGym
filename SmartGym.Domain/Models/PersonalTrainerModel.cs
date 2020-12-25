@@ -1,9 +1,10 @@
 ﻿
+
 namespace SmartGym.Domain.Models
 {
-    public class StudentModel
+    class PersonalTrainerModel
     {
-        public StudentModel(int id, string name)
+        public PersonalTrainerModel(int id, string name)
         {
             Id = id;
             Name = name;
@@ -11,6 +12,5 @@ namespace SmartGym.Domain.Models
 
         public int Id { get; set; }
         public string Name { get; set; }
-
     }
 }

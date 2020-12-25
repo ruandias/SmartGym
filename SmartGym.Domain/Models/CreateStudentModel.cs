@@ -1,5 +1,4 @@
-﻿using SmartGym.Domain.Entities;
-
+﻿
 
 namespace SmartGym.Domain.Models
 {
