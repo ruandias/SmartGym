@@ -17,7 +17,6 @@ namespace SmartGym.Infra.Data.Context
         public DbSet<Student> Students { get; set; }
         public DbSet<PersonalTrainer> PersonalTrainers { get; set; }
         public DbSet<TrainingCenter> TrainingCenters { get; set; }
-        public DbSet<Address> Addresses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -26,7 +25,6 @@ namespace SmartGym.Infra.Data.Context
             modelBuilder.Entity<Student>(new StudentMap().Configure);
             modelBuilder.Entity<PersonalTrainer>(new PersonalTrainerMap().Configure);
             modelBuilder.Entity<TrainingCenter>(new TrainingCenterMap().Configure);
-            modelBuilder.Entity<Address>(new AddressMap().Configure);
 
             var entites = Assembly
                 .Load("SmartGym.Domain")

@@ -5,8 +5,8 @@ using System;
 
 namespace SmartGym.API.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("api/students")]
     public class StudentController : Controller
     {
         private readonly IServiceStudent _serviceStudent;

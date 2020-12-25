@@ -10,16 +10,14 @@ namespace SmartGym.Domain.Entities
 
         private IList<PersonalTrainer> _personalTrainers;
 
-        public TrainingCenter(string companyName, Address address)
+        public TrainingCenter(string companyName)
         {
             CompanyName = companyName;
-            Address = address;
             _students = new List<Student>();
             _personalTrainers = new List<PersonalTrainer>();
         }
 
         public string CompanyName { get; private set; }
-        public Address  Address { get; private set; }
         public IReadOnlyCollection<Student> Students { get; private set; }
         public IReadOnlyCollection<PersonalTrainer> PersonalTrainers { get; private set; }
 
