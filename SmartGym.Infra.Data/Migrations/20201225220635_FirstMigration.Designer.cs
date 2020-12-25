@@ -9,7 +9,7 @@ using SmartGym.Infra.Data.Context;
 namespace SmartGym.Infra.Data.Migrations
 {
     [DbContext(typeof(SqlServerDbContext))]
-    [Migration("20201225162551_FirstMigration")]
+    [Migration("20201225220635_FirstMigration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
