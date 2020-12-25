@@ -4,4 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Flunt" Version="1.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartGym.Domain\SmartGym.Domain.csproj" />
+    <ProjectReference Include="..\SmartGym.Infra.Data\SmartGym.Infra.Data.csproj" />
+    <ProjectReference Include="..\SmartGym.Infra.Shared\SmartGym.Infra.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

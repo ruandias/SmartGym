@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -16,6 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SmartGym.Domain\SmartGym.Domain.csproj" />
     <ProjectReference Include="..\SmartGym.Infra.CrossCutting\SmartGym.Infra.CrossCutting.csproj" />
+    <ProjectReference Include="..\SmartGym.Service\SmartGym.Service.csproj" />
   </ItemGroup>
 
 </Project>

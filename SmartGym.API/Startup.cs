@@ -25,11 +25,11 @@ namespace SmartGym.API
                 config.Filters.Add<NotificationFilter>();
             });
 
-            services.AddControllers();
             services.AddSqlDependency(Configuration);
+            services.AddSqlServerRepositoryDependency();
+            services.AddServiceDependency();
             services.AddSwaggerDependency();
             services.AddNotificationDependency();
-
 
         }
 
@@ -38,18 +38,9 @@ namespace SmartGym.API
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
+            app.UseMvc();
             app.UseSwaggerDependency();
 
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
         }
     }
 }

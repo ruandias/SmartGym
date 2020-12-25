@@ -1,5 +1,5 @@
 ﻿using SmartGym.Domain.Enums;
-using SmartGym.Domain.ValueObjects;
+using SmartGym.Domain.ValueTypes;
 
 namespace SmartGym.Domain.Entities
 {

@@ -1,5 +1,5 @@
 ﻿using SmartGym.Domain.Enums;
-using SmartGym.Domain.ValueObjects;
+using SmartGym.Domain.ValueTypes;
 using System.Collections.Generic;
 using System.Linq;
 

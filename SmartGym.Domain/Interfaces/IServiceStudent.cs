@@ -5,7 +5,7 @@ namespace SmartGym.Domain.Interfaces
 {
     public interface IServiceStudent
     {
-        StudentModel Insert(CreateStudentModel userModel);
+        StudentModel Insert(CreateStudentModel studentModel);
 
         StudentModel Update(int id, UpdateStudentModel studentModel);
 
