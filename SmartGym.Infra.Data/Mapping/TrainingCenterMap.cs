@@ -20,23 +20,16 @@ namespace SmartGym.Infra.Data.Mapping
 
 
             builder
-                .HasMany(prop => prop.Students)
-                .WithOne(prop => prop.TrainingCenter)
-                .HasForeignKey(prop => prop.TrainingCenterId)
-                .OnDelete(DeleteBehavior.Restrict);
-
-
-            builder
-                .HasMany(prop => prop.Students)
-                .WithOne(prop => prop.TrainingCenter)
-                .HasForeignKey(prop => prop.TrainingCenterId)
+                .HasMany(t => t.Students)
+                .WithOne(s => s.TrainingCenter)
+                .HasForeignKey(s => s.TrainingCenterId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                .HasMany(prop => prop.PersonalTrainers)
-                .WithOne(prop => prop.TrainingCenter)
-                .HasForeignKey(prop => prop.TrainingCenterId)
-                .OnDelete(DeleteBehavior.Restrict);
+               .HasMany(t => t.PersonalTrainers)
+               .WithOne(p => p.TrainingCenter)
+               .HasForeignKey(s => s.TrainingCenterId)
+               .OnDelete(DeleteBehavior.Restrict);
 
         }
     }

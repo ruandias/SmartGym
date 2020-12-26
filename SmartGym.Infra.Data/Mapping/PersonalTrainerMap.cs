@@ -19,9 +19,9 @@ namespace SmartGym.Infra.Data.Mapping
                 .HasColumnType("varchar(100)");
 
             builder
-                .HasMany(prop => prop.Students)
-                .WithOne(prop => prop.PersonalTrainer)
-                .HasForeignKey(prop => prop.PersonalTrainerId)
+                .HasMany(p => p.Students)
+                .WithOne(s => s.PersonalTrainer)
+                .HasForeignKey(s => s.PersonalTrainerId)
                 .OnDelete(DeleteBehavior.Restrict);
 
         }
