@@ -1,6 +1,5 @@
 ﻿using SmartGym.Domain.ValueTypes;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace SmartGym.Domain.Entities
 {
@@ -26,6 +25,7 @@ namespace SmartGym.Domain.Entities
 
         public virtual IEnumerable<Student> Students { get; }
         public virtual IEnumerable<PersonalTrainer> PersonalTrainers { get; }
+
 
     }
 }

@@ -21,7 +21,7 @@ namespace SmartGym.Infra.Data.Mapping
             builder
                 .HasMany(prop => prop.Students)
                 .WithOne(prop => prop.PersonalTrainer)
-                .HasForeignKey(prop => prop.IdPersonalTrainer)
+                .HasForeignKey(prop => prop.PersonalTrainerId)
                 .OnDelete(DeleteBehavior.Restrict);
 
         }

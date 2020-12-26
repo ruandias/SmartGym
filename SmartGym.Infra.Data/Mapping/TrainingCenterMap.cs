@@ -22,20 +22,20 @@ namespace SmartGym.Infra.Data.Mapping
             builder
                 .HasMany(prop => prop.Students)
                 .WithOne(prop => prop.TrainingCenter)
-                .HasForeignKey(prop => prop.IdTrainingCenter)
+                .HasForeignKey(prop => prop.TrainingCenterId)
                 .OnDelete(DeleteBehavior.Restrict);
 
 
             builder
                 .HasMany(prop => prop.Students)
                 .WithOne(prop => prop.TrainingCenter)
-                .HasForeignKey(prop => prop.IdTrainingCenter)
+                .HasForeignKey(prop => prop.TrainingCenterId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder
                 .HasMany(prop => prop.PersonalTrainers)
                 .WithOne(prop => prop.TrainingCenter)
-                .HasForeignKey(prop => prop.IdTrainingCenter)
+                .HasForeignKey(prop => prop.TrainingCenterId)
                 .OnDelete(DeleteBehavior.Restrict);
 
         }
