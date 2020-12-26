@@ -24,10 +24,11 @@ namespace SmartGym.Domain.Entities
         public EStatusStudent Status { get; private set; }
 
         public int IdTrainingCenter { get; private set; }
-        public TrainingCenter TrainingCenter { get; private set; }
+        public virtual TrainingCenter TrainingCenter { get; private set; }
 
         public int IdPersonalTrainer { get; private set; }
-        public PersonalTrainer PersonalTrainer { get; private set; }
+
+        public virtual PersonalTrainer PersonalTrainer { get; private set; }
 
 
     }

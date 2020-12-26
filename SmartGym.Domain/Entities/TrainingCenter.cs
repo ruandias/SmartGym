@@ -1,33 +1,31 @@
-﻿using System.Collections.Generic;
+﻿using SmartGym.Domain.ValueTypes;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SmartGym.Domain.Entities
 {
     public class TrainingCenter : BaseEntity<int>
     {
 
-        private IList<Student> _students;
-
-        private IList<PersonalTrainer> _personalTrainers;
         protected TrainingCenter() { }
 
 
-        public TrainingCenter(int id, string companyName) : base(id)
+        public TrainingCenter(int id, CompanyName companyName) : base(id)
         {
-            AddNotification(companyName, "CompanyName");
+            AddNotifications(companyName.contract);
 
-            if(Valid)
+            if (Valid)
             {
                 CompanyName = companyName;
-                _students = new List<Student>();
-                _personalTrainers = new List<PersonalTrainer>();
             }
 
 
         }
 
-        public string CompanyName { get; private set; }
-        public IReadOnlyCollection<Student> Students { get; private set; }
-        public IReadOnlyCollection<PersonalTrainer> PersonalTrainers { get; private set; }
+        public CompanyName CompanyName { get; private set; }
+
+        public virtual IEnumerable<Student> Students { get; }
+        public virtual IEnumerable<PersonalTrainer> PersonalTrainers { get; }
 
     }
 }

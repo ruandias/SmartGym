@@ -9,7 +9,6 @@ namespace SmartGym.Domain.Entities
     {
         protected PersonalTrainer() { }
 
-        private IList<Student> _students;
 
         public PersonalTrainer(int id, Name name) : base(id)
         {
@@ -18,21 +17,15 @@ namespace SmartGym.Domain.Entities
             {
                 Name = name;
                 Status = EStatusPersonalTrainer.Active;
-                _students = new List<Student>();
             }
 
         }
 
         public Name Name { get; private set; }
         public EStatusPersonalTrainer Status { get; private set; }
-        public IReadOnlyCollection<Student> Students { get { return _students.ToArray();  } }
-
         public int IdTrainingCenter { get; private set; }
-        public TrainingCenter TrainingCenter { get; private set; }
+        public virtual TrainingCenter TrainingCenter { get; private set; }
+        public virtual IEnumerable<Student> Students { get; }
 
-        public void AddStudent(Student student)
-        {
-            _students.Add(student);
-        }
     }
 }
