@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json.Serialization;
 using SmartGym.Infra.CrossCutting.Filter;
 using SmartGym.Infra.CrossCutting.InversionOfControl;
 
@@ -19,6 +20,11 @@ namespace SmartGym.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                });
             services.AddMvc(config =>
             {
                 config.EnableEndpointRouting = false;
