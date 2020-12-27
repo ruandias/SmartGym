@@ -23,7 +23,6 @@ namespace SmartGym.Infra.Data.Mapping
                 .WithOne(s => s.PersonalTrainer)
                 .HasForeignKey(s => s.PersonalTrainerId)
                 .OnDelete(DeleteBehavior.Restrict);
-
         }
     }
 }

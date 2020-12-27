@@ -9,11 +9,6 @@ namespace SmartGym.Domain.Entities
 
         protected TrainingCenter() { }
 
-        private IList<Student> _students;
-        private IList<PersonalTrainer> _personalTrainers;
-
-
-
         public TrainingCenter(int id, CompanyName companyName) : base(id)
         {
             AddNotifications(companyName.contract);
@@ -21,8 +16,9 @@ namespace SmartGym.Domain.Entities
             if (Valid)
             {
                 CompanyName = companyName;
-                _students = new List<Student>();
-                _personalTrainers = new List<PersonalTrainer>();
+                this.Students = new List<Student>();
+                this.PersonalTrainers = new List<PersonalTrainer>();
+
             }
 
 
@@ -30,9 +26,8 @@ namespace SmartGym.Domain.Entities
 
         public CompanyName CompanyName { get; private set; }
 
-        public IReadOnlyCollection<Student> Students { get { return _students.ToArray(); } }
-        public virtual IReadOnlyCollection<PersonalTrainer> PersonalTrainers { get { return _personalTrainers.ToArray(); } }
-
+        public virtual ICollection<Student> Students { get; private set; }
+        public virtual ICollection<PersonalTrainer> PersonalTrainers { get; private set; }
 
     }
 }

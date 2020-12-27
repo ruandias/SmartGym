@@ -1,7 +1,6 @@
 ﻿using SmartGym.Domain.Enums;
 using SmartGym.Domain.ValueTypes;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace SmartGym.Domain.Entities
 {
@@ -9,27 +8,26 @@ namespace SmartGym.Domain.Entities
     {
         protected PersonalTrainer() { }
 
-        private IList<Student> _students;
-
-
-        public PersonalTrainer(int id, Name name) : base(id)
+        public PersonalTrainer(int id, int trainingCenterId, Name name) : base(id)
         {
             AddNotifications(name.contract);
             if(Valid)
             {
                 Name = name;
                 Status = EStatusPersonalTrainer.Active;
-                _students = new List<Student>();
+                this.Students = new List<Student>();
+                TrainingCenterId = trainingCenterId;
             }
 
         }
 
         public Name Name { get; private set; }
         public EStatusPersonalTrainer Status { get; private set; }
-        public IReadOnlyCollection<Student> Students { get { return _students.ToArray(); } }
 
-        public int TrainingCenterId { get; private set; }
-        public virtual TrainingCenter TrainingCenter { get; private set; }
+        public virtual ICollection<Student> Students { get; private set; }
+
+        public int TrainingCenterId { get; set; }
+        public virtual TrainingCenter TrainingCenter { get; set; }
 
     }
 }

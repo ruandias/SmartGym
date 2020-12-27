@@ -6,7 +6,7 @@ namespace SmartGym.Domain.Entities
     public class Student : BaseEntity<int>
     {
 
-        public Student(int id, Name name) : base(id)
+        public Student(int id, int personalTrainerId, int trainingCenterId , Name name) : base(id)
         {
             AddNotifications(name.contract);
 
@@ -15,6 +15,8 @@ namespace SmartGym.Domain.Entities
 
                 Name = name;
                 Status = EStatusStudent.Active;
+                PersonalTrainerId = personalTrainerId;
+                TrainingCenterId = trainingCenterId;
             }
 
         }
@@ -23,12 +25,11 @@ namespace SmartGym.Domain.Entities
         public Name Name { get; private set; }
         public EStatusStudent Status { get; private set; }
 
-        public int TrainingCenterId { get; private set; }
-        public virtual TrainingCenter TrainingCenter { get; private set; }
+        public int TrainingCenterId { get; set; }
+        public virtual TrainingCenter TrainingCenter {get; set;}
 
-        public int PersonalTrainerId { get; private set; }
-
-        public virtual PersonalTrainer PersonalTrainer { get; private set; }
+        public int PersonalTrainerId { get; set; }
+        public virtual PersonalTrainer PersonalTrainer { get; set; }
 
 
     }
