@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace SmartGym.Infra.Shared.Mapper
+namespace Infra.Shared.Mapper
 {
     public static class TrainingCenterMapper
     {

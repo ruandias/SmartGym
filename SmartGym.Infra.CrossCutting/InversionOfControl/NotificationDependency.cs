@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SmartGym.Infra.Shared.Contexts;
+using Infra.Shared.Contexts;
 
 namespace SmartGym.Infra.CrossCutting.InversionOfControl
 {

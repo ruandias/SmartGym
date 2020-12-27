@@ -11,7 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SmartGym.Domain\SmartGym.Domain.csproj" />
     <ProjectReference Include="..\SmartGym.Infra.Data\SmartGym.Infra.Data.csproj" />
-    <ProjectReference Include="..\SmartGym.Infra.Shared\SmartGym.Infra.Shared.csproj" />
+    <ProjectReference Include="..\SmartGym.Infra.Shared\Infra.Shared.csproj" />
   </ItemGroup>
 
 </Project>

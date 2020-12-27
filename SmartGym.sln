@@ -7,15 +7,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8E0368BC-3E5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{2BFB9C12-E039-42B1-8411-5BA204D2CA28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.API", "SmartGym.API\SmartGym.API.csproj", "{3F6E8376-1278-4AED-8FA4-A6F7F773076A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartGym.API", "SmartGym.API\SmartGym.API.csproj", "{3F6E8376-1278-4AED-8FA4-A6F7F773076A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{501C43C9-0DD7-42B5-9554-EF2A383F6545}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Domain", "SmartGym.Domain\SmartGym.Domain.csproj", "{DCAE9CED-BE0E-499C-B46D-A8051C491B2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartGym.Domain", "SmartGym.Domain\SmartGym.Domain.csproj", "{DCAE9CED-BE0E-499C-B46D-A8051C491B2D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{375C4163-1DC8-4C88-9DAA-6D1E89D01F06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Tests", "SmartGym.Tests\SmartGym.Tests.csproj", "{59BA705B-7F18-4D64-8295-F8E713C28D7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartGym.Tests", "SmartGym.Tests\SmartGym.Tests.csproj", "{59BA705B-7F18-4D64-8295-F8E713C28D7B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service", "{42735F18-CDAC-4C96-AD31-CBF32B6FFDCF}"
 EndProject
@@ -25,15 +25,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - CrossCutting", "4.2 - CrossCutting", "{B5020F4C-8ECB-467C-A8AB-FC6A9CA870FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Infra.CrossCutting", "SmartGym.Infra.CrossCutting\SmartGym.Infra.CrossCutting.csproj", "{BD7FD1BF-0878-4FDF-8A85-B7A4EEA52FDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartGym.Infra.CrossCutting", "SmartGym.Infra.CrossCutting\SmartGym.Infra.CrossCutting.csproj", "{BD7FD1BF-0878-4FDF-8A85-B7A4EEA52FDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Infra.Data", "SmartGym.Infra.Data\SmartGym.Infra.Data.csproj", "{59E363D5-1D6F-4A42-9BCD-5C685381D052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartGym.Infra.Data", "SmartGym.Infra.Data\SmartGym.Infra.Data.csproj", "{59E363D5-1D6F-4A42-9BCD-5C685381D052}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3 - Shared", "4.3 - Shared", "{4E2AAE71-0972-4F8C-A0B1-86ACFFA8A9CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Infra.Shared", "SmartGym.Infra.Shared\SmartGym.Infra.Shared.csproj", "{630D7D18-430F-4866-9BF7-CB6683044475}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra.Shared", "SmartGym.Infra.Shared\Infra.Shared.csproj", "{630D7D18-430F-4866-9BF7-CB6683044475}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGym.Service", "SmartGym.Service\SmartGym.Service.csproj", "{4D2DEC27-28BF-43B8-9832-B1D5E40B7A83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartGym.Service", "SmartGym.Service\SmartGym.Service.csproj", "{4D2DEC27-28BF-43B8-9832-B1D5E40B7A83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,8 +1,8 @@
 ﻿using Flunt.Validations;
 using SmartGym.Domain.Interfaces;
 using SmartGym.Domain.Models;
-using SmartGym.Infra.Shared.Contexts;
-using SmartGym.Infra.Shared.Mapper;
+using Infra.Shared.Contexts;
+using Infra.Shared.Mapper;
 using System.Collections.Generic;
 
 namespace SmartGym.Service.Services
